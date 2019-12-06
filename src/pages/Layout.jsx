@@ -1,0 +1,165 @@
+import React , { Component } from "react"
+//组件
+import { TabBar } from 'antd-mobile';
+import Selection  from "./home/selection/Selection"
+import Classify   from "./home/classify/Classify"
+import SmallBook  from "./home/smallBook/SmallBook"
+import Cart       from "./home/cart/Cart"
+import Mine       from "./home/mine/Mine"
+//静态资源
+import NavIco from "assets/images/nav-ico.png"
+
+class Layout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedTab: 'selection',
+      fullScreen: true,
+    };
+  }
+
+  render() {
+    return (
+      <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
+        <TabBar
+          barTintColor="#f3f4f5"
+        >
+          <TabBar.Item
+            icon={
+              <div style={{
+              width: '45px',
+              height: '45px',
+              background: `url(${NavIco}) 0 -2px /  385px auto no-repeat` }}
+              />
+            }
+            selectedIcon={
+              <div style={{
+              width: '45px',
+              height: '45px',
+              background: `url(${NavIco}) 0px -59px /  385px auto no-repeat` }}
+              />
+            }
+            key="selection"
+            selected={this.state.selectedTab === 'selection'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'selection',
+              });
+            }}
+            >
+            <Selection></Selection>
+          </TabBar.Item>
+          <TabBar.Item
+            icon={
+              <div style={{
+                width: '45px',
+                height: '45px',
+                background: `url(${NavIco}) -52px -2px /  385px auto no-repeat` }}
+                />
+            }
+            selectedIcon={
+              <div style={{
+                width: '45px',
+                height: '45px',
+                background: `url(${NavIco}) -55px -58px /  385px auto no-repeat` }}
+                />
+            }
+            title=""
+            key="classify"
+            selected={this.state.selectedTab === 'classify'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'classify',
+              });
+            }}
+            >
+              <Classify></Classify>
+          </TabBar.Item>
+          <TabBar.Item
+            icon={
+              <div style={{
+                width: '45px',
+                height: '45px',
+                background: `url(${NavIco}) -181px -2px /  385px auto no-repeat` }}
+                />
+            }
+            selectedIcon={
+              <div style={{
+                width: '45px',
+                height: '45px',
+                background: `url(${NavIco}) -181px -58px /  385px auto no-repeat` }}
+                />
+            }
+            title=""
+            key="smallBook"
+            selected={this.state.selectedTab === 'smallBook'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'smallBook',
+              });
+            }}
+            >
+            <SmallBook></SmallBook>
+          </TabBar.Item>
+          <TabBar.Item
+            icon={
+              <div style={{
+                width: '45px',
+                height: '45px',
+                background: `url(${NavIco}) -113px -2px /  385px auto no-repeat` }}
+                />
+            }
+            selectedIcon={
+              <div style={{
+                width: '45px',
+                height: '45px',
+                background: `url(${NavIco}) -111px -58px /  385px auto no-repeat` }}
+                />
+            }
+            title=""
+            key="cart"
+            selected={this.state.selectedTab === 'cart'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'cart',
+              });
+            }}
+            >
+              <Cart></Cart>
+          </TabBar.Item>
+          <TabBar.Item
+            icon={
+              <div style={{
+                width: '45px',
+                height: '45px',
+                background: `url(${NavIco}) -255px -2px /  385px auto no-repeat` }}
+                />
+            }
+            selectedIcon={
+              <div style={{
+                width: '45px',
+                height: '45px',
+                background: `url(${NavIco}) -255px -58px /  385px auto no-repeat` }}
+                />
+            }
+            title=""
+            key="mine"
+            selected={this.state.selectedTab === 'mine'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'mine',
+              });
+            }}
+            >
+              <Mine></Mine>
+          </TabBar.Item>
+        </TabBar>
+      </div>
+    );
+  }
+}
+
+export default Layout 
+
+
+
