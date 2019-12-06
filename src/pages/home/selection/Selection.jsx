@@ -1,8 +1,15 @@
 import React , { Component } from "react"
+//组件
+import Swipr from "./Swiper"
+
 
 class Selection extends Component {
   render(){
-    return <div>Selection</div>
+    return (
+      <>
+        <Swipr></Swipr>
+      </>
+    )
   }
 }
 
