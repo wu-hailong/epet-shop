@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Carousel, WingBlank } from 'antd-mobile';
+import { Carousel } from 'antd-mobile';
+
+//
+import { SlideWrap,SwiperWrap } from "./stlyleSelection"
 class Swiper extends Component {
   state = {
     data: [
@@ -9,33 +12,31 @@ class Swiper extends Component {
   }
   render() {
     return (
-      <WingBlank
-        style={{ margin:0}}
-      >
+      <SwiperWrap>
+
         <Carousel
           autoplay={true}
           infinite
         >
           {this.state.data.map(val => (
-            <a
+            <SlideWrap
               key={val}
               href={val}
-              style={{ display: 'inline-block', width: '100%', height:290 }}
+  
             >
               <img
                 src={val}
                 alt=""
-                style={{ width: '100%', verticalAlign: 'top', height:"100%" }}
                 onLoad={() => {
                   // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
                   this.setState({ imgHeight: 'auto' });
                 }}
               />
-            </a>
+            </SlideWrap>
           ))}
         </Carousel>
-      </WingBlank>
+      </SwiperWrap>
     );
   }
 }

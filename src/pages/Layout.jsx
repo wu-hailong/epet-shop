@@ -13,16 +13,15 @@ class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'selection',
-      fullScreen: true,
+      selectedTab: 'selection'
     };
   }
 
   render() {
     return (
-      <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
         <TabBar
           barTintColor="#f3f4f5"
+          prerenderingSiblingsNumber={0}
         >
           <TabBar.Item
             icon={
@@ -47,7 +46,8 @@ class Layout extends Component {
               });
             }}
             >
-            <Selection></Selection>
+         
+            <Selection showNav={true}></Selection>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -154,7 +154,6 @@ class Layout extends Component {
               <Mine></Mine>
           </TabBar.Item>
         </TabBar>
-      </div>
     );
   }
 }
