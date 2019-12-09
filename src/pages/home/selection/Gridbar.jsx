@@ -8,7 +8,7 @@ class Gridbar extends Component {
           <ul> 
               {
                 this.props.gridList.map((item)=>{
-                  return <li key={item.name}><img src={item.img_url} alt=""/></li>
+                  return <li key={item.name}><img src={item.img_url} alt={item.name}/></li>
                 })
               }
           </ul>

@@ -8,7 +8,9 @@ class Swiper extends Component {
     data: [
       'https://img2.epetbar.com/2019-12/02/16/54db3b78f2fc1e336ed67fdd771f6f0e.jpg?x-oss-process=style/water',
       'https://img2.epetbar.com/2019-12/04/14/1e6f687ffc01a308f3cdd06fd121a6d6.jpg?x-oss-process=style/water', 
-      'https://img2.epetbar.com/2019-12/02/18/78796b87855463c0619567d6393ea9c8.png?x-oss-process=style/water'],
+      'https://img2.epetbar.com/2019-12/02/18/78796b87855463c0619567d6393ea9c8.png?x-oss-process=style/water'
+    ],
+    imgHeight:290
   }
   render() {
     return (
@@ -22,7 +24,7 @@ class Swiper extends Component {
             <SlideWrap
               key={val}
               href={val}
-  
+              style={{height:this.state.imgHeight}}
             >
               <img
                 src={val}

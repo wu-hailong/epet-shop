@@ -1,6 +1,15 @@
 
 import styled from "styled-components"
+
+import border from "components/styled/border"
+
 import msgIco from "assets/images/msg-ico.png"
+import cartIco from "assets/images/cart-ico.png"
+
+export const SelectionWrap = styled.div `
+  background:#fff;
+`
+
 export const SlideWrap = styled.a `
   display:inline-block;
   width :100%;
@@ -196,5 +205,88 @@ export const HotItemWrap = styled.div `
     font-size:.12rem;
     color: #999;
     text-decoration:line-through;
+  }
+`
+export const AdvertSwiperWrap = styled.div `
+  margin-bottom:.35rem;
+  a{
+    width:3.75rem;
+    img{
+      width:3.75rem;
+    }
+  }
+
+`
+
+export const GuessWrap = styled.div `
+  .title{
+    padding:0 .1rem;
+    margin-bottom:.2rem;
+    img{
+      height:.19rem;
+    }
+  }
+
+`
+export const GuessItemWrap = styled.ul `
+  height:2.58rem;
+  margin-bottom:.1rem;
+  padding:0 .05rem;
+  display:flex;
+  li{
+    padding: 0 .05rem;
+    flex:1;
+  }
+`
+export const ItemConWrap = border(styled.div `
+  padding:.15rem;
+  border-radius: .1rem;
+  img{
+    width:100%;
+  }
+  .content-name{
+    height:.32rem;
+    font-size:.12rem;
+    line-height:.16rem;
+    margin:.05rem 0;
+    overflow:hidden;
+  }
+  .content-price{
+    font-size:.1rem;
+    font-weight:700;
+    color:#ff5757;
+    span{
+      font-size:.14rem;
+    }
+  }
+  .interest{
+    height:.18rem;
+  }
+  .add-cart{
+    position:absolute;
+    width:.26rem;
+    height:.26rem;
+    bottom: .32rem;
+    right: .2rem;
+    background:url(${cartIco}) center / 100% no-repeat;
+  }
+`)
+
+export const FooterWrap = styled.div `
+  padding: .2rem .2rem .15rem;
+  >div:first-child{
+    text-align:center;
+    span{
+      color: #ff5757;
+      padding-right:.1rem;
+    }
+    a{
+      color:#333;
+      padding-right:.1rem;
+    }
+  }
+  >div:last-child{
+    text-align:center;
+    font-size:.12rem;
   }
 `

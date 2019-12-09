@@ -1,13 +1,15 @@
 import React , { Component } from "react"
 //组件
 import { TabBar } from 'antd-mobile';
-import Selection  from "./home/selection/Selection"
-import Classify   from "./home/classify/Classify"
-import SmallBook  from "./home/smallBook/SmallBook"
-import Cart       from "./home/cart/Cart"
-import Mine       from "./home/mine/Mine"
+import Selection  from "./selection/Selection"
+import Classify   from "./classify/Classify"
+import SmallBook  from "./smallBook/SmallBook"
+import Cart       from "./cart/Cart"
+import Mine       from "./mine/Mine"
 //静态资源
 import NavIco from "assets/images/nav-ico.png"
+
+import { LayoutWrap } from "./layoutStyled"
 
 class Layout extends Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class Layout extends Component {
 
   render() {
     return (
+      <LayoutWrap>
         <TabBar
           barTintColor="#f3f4f5"
           prerenderingSiblingsNumber={0}
@@ -154,6 +157,7 @@ class Layout extends Component {
               <Mine></Mine>
           </TabBar.Item>
         </TabBar>
+      </LayoutWrap>
     );
   }
 }

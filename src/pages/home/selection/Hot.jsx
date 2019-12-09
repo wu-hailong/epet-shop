@@ -9,19 +9,19 @@ class Hot extends Component {
       <HotWrap> 
        <div>
          {
-           this.props.hotData.berserk ? (
+           this.props.berserk ? (
             <>
               <div className="panic-buy">
                   <div>
-                    <img src={this.props.hotData.berserk.left.img_url} alt=""/>
+                    <img src={this.props.berserk.left.img_url} alt=""/>
                     <div className="label-wrap">
-                    <span>{this.props.hotData.berserk.title}</span>
-                    <span>{this.props.hotData.berserk.stateTitle}</span>
+                    <span>{this.props.berserk.title}</span>
+                    <span>{this.props.berserk.stateTitle}</span>
                     </div>
                   </div>
                   <ItemWrap>
                     {
-                      this.props.hotData.berserk.goods.map(item=>{
+                      this.props.berserk.goods.map(item=>{
                           return <HotItem key={item.gid} item={item}></HotItem>
                       })
                     }
@@ -29,11 +29,11 @@ class Hot extends Component {
               </div>
               <div className="assemble-buy">
                   <div>
-                    <img src={this.props.hotData.egroup.left.img_url} alt=""/>
+                    <img src={this.props.egroup.left.img_url} alt=""/>
                   </div>
                   <ItemWrap>
                     {
-                      this.props.hotData.egroup.goods.map(item=>{
+                      this.props.egroup.goods.map(item=>{
                           return <HotItem key={item.gid} item={item}></HotItem>
                       })
                     }
