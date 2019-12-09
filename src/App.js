@@ -1,11 +1,12 @@
 import React from 'react';
-import Layout from "./pages/home/Layout"
-
+import store from "store/"
+import { Provider } from "react-redux"
+import Layout from "pages/home/Layout"
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Layout></Layout>
-    </>
+    </Provider>
   );
 }
 

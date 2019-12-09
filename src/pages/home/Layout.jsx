@@ -1,14 +1,12 @@
 import React , { Component } from "react"
 //组件
 import { TabBar } from 'antd-mobile';
-import Selection  from "./selection/Selection"
-import Classify   from "./classify/Classify"
-import SmallBook  from "./smallBook/SmallBook"
-import Cart       from "./cart/Cart"
-import Mine       from "./mine/Mine"
+import { Selection, Classify, SmallBook, Cart, Mine }  from "./"
+
 //静态资源
 import NavIco from "assets/images/nav-ico.png"
 
+//样式
 import { LayoutWrap } from "./layoutStyled"
 
 class Layout extends Component {

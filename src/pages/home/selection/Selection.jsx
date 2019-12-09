@@ -1,6 +1,9 @@
 import React , { Component } from "react"
 
+import { connect } from "react-redux"
+
 import { SelectionWrap } from "./stlyleSelection" 
+
 
 // import _ from "lodash"
 
@@ -13,22 +16,32 @@ import AdvertSwiprt from  "./AdvertSwiprt"
 import GuessLike    from  "components/guesslike/GuessLike"
 import Footer       from  "./Footer"
 
-import { get } from "utils/http"
-class Selection extends Component {
-  state={
-    menuList:[],
-    gridList:[],
-    hotData:{},
-    topAdvertData:{},
-    centerAdcertData:{},
-    bottomAdvertData:{},
-    guessTitle:{},
-    guessList:[]
+// import { get } from "utils/http"
+
+import { GETDATA } from "../action-types"
+
+const mapState = state=>{
+  return {
+    data:state.home.list //在store/reducers
   }
+}
+
+const mapDispacth = dispatch=>({
+    loadData({url,params}){
+      dispatch({
+        type:GETDATA,
+        url,
+        params
+      })
+    }
+  })
+
+
+class Selection extends Component {
+
   async componentDidMount(){
-    let result = await get({
-      url:"/v3/index/main.html",
-      params:{
+    let url = "/v3/index/main.html"
+    let params = {
         do: "getStaticV415",
         cdn_version: 201912061749191,
         pet_type: "dog",
@@ -37,36 +50,42 @@ class Selection extends Component {
         isWeb: 1,
         system: "wap",
         distinct_id: '16e64c78ae5184-01373374343693-67e1b3f-1327104-16e64c78ae6653'
-      }
-    })
-    // console.log(result)
-    this.setState({
-      menuList:result.navs.menus.data,
-      gridList:result.list[0].data.menus,
-      hotData:result.list[5].data,
-      topAdvert:result.list[8].data,
-      centerAdcertData:result.list[12].data,
-      bottomAdvertData:result.list[16].data,
-      guessTitle:result.list[19].data,
-      guessList:result.list.slice(20)
-    })
+    }
+    this.props.loadData({url,params})
+
   }
   render(){
-    
-    return (
-      <SelectionWrap>
-        <TopMenu menuList={this.state.menuList}></TopMenu>
-        <Swipr></Swipr>
-        <Gridbar gridList={this.state.gridList}></Gridbar>
-        <Hot {...this.state.hotData}></Hot>
-        <AdvertSwiprt {...this.state.topAdvert}></AdvertSwiprt>
-        <AdvertSwiprt {...this.state.centerAdcertData}></AdvertSwiprt>
-        <AdvertSwiprt {...this.state.bottomAdvertData}></AdvertSwiprt>
-        <GuessLike title={this.state.guessTitle} data={this.state.guessList}></GuessLike>
-        <Footer></Footer>
-      </SelectionWrap>
-    )
+    // console.log(this.props)
+    let { data:dataSource } = this.props
+    if(dataSource.current_page_name){
+      let data = {
+        menuList:dataSource.navs.menus.data,
+        swiperList:dataSource.list[0].data.images,
+        gridList:dataSource.list[0].data.menus,
+        hotData:dataSource.list[5].data,
+        topAdvert:dataSource.list[8].data,
+        centerAdcertData:dataSource.list[12].data,
+        bottomAdvertData:dataSource.list[16].data,
+        guessTitle:dataSource.list[19].data,
+        guessList:dataSource.list.slice(20)
+      }
+      return (
+        <SelectionWrap>
+          <TopMenu menuList={data.menuList}></TopMenu>
+          <Swipr swiperList={data.swiperList}></Swipr>
+          <Gridbar gridList={data.gridList}></Gridbar>
+          <Hot {...data.hotData}></Hot>
+          <AdvertSwiprt {...data.topAdvert}></AdvertSwiprt>
+          <AdvertSwiprt {...data.centerAdcertData}></AdvertSwiprt>
+          <AdvertSwiprt {...data.bottomAdvertData}></AdvertSwiprt>
+          <GuessLike title={data.guessTitle} data={data.guessList}></GuessLike>
+          <Footer></Footer>
+        </SelectionWrap>
+      )
+    }else{
+      return null
+    }
   }
 }
 
-export default Selection
+export default connect(mapState,mapDispacth)(Selection)
