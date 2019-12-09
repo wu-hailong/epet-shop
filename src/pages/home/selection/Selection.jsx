@@ -10,7 +10,7 @@ import TopMenu      from  "./TopMenu"
 import Gridbar      from  "./Gridbar"
 import Hot          from  "./Hot"
 import AdvertSwiprt from  "./AdvertSwiprt"
-import GuessLike    from  "./GuessLike"
+import GuessLike    from  "components/guesslike/GuessLike"
 import Footer       from  "./Footer"
 
 import { get } from "utils/http"

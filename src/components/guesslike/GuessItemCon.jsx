@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { ItemConWrap } from "./stlyleSelection"
+import { ItemConWrap } from "pages/home/selection/stlyleSelection"
 
 class GuessItemCon extends Component {
   render() {

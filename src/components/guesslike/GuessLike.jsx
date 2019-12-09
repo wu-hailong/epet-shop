@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { GuessWrap } from "./stlyleSelection"
+import { GuessWrap } from "pages/home/selection/stlyleSelection"
 import GuessItem from "./GuessItem"
 class GuessLike extends Component {
   render() {
