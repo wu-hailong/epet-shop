@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { GuessItemWrap } from "pages/home/selection/stlyleSelection"
+import { GuessItemWrap } from "./guessStyled"
 
 import GuessItemCon from "./GuessItemCon"
 
