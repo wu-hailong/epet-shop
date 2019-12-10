@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { Carousel } from 'antd-mobile';
 
 //
-import { SlideWrap,SwiperWrap } from "./stlyleSelection"
+import { SwiperWrap } from "./stlyleSelection"
 class Swiper extends Component {
   state = {
-    imgHeight:290,
     list:[]
   }
   render() {
@@ -16,25 +15,37 @@ class Swiper extends Component {
         <Carousel
           autoplay={true}
           infinite
+          dotStyle={
+            {
+              width:"6px",
+              height:"6px", 
+              border: "1px solid #fff",
+              background: "transparent",
+              opacity: .9,
+              margin: "1px 4px",
+              borderRadius:"6px",
+              transition: "all 0.25s ease"
+            }
+          }
+          dotActiveStyle={
+            {
+              width:"16px",
+              height:"6px",
+              background:"#fff",
+              margin: "1px 4px",
+              borderRadius:"6px",
+              transition: "all 0.25s ease"
+            }
+          }
         >
           {
             Object.keys(swiperList).map(key =>{
-              return (
-                <SlideWrap
-                  key={swiperList[key].advid}
-                  href="##"
-                  style={{height:this.state.imgHeight}}
-                 >
+              return (  
                   <img
+                    key={swiperList[key].advid}
                     src={swiperList[key].img_url}
                     alt=""
-                    onLoad={() => {
-                      // fire window resize event to change height
-                      window.dispatchEvent(new Event('resize'));
-                      this.setState({ imgHeight: 'auto' });
-                    }}
                   />
-                </SlideWrap>
               )
             })
           }

@@ -3,40 +3,44 @@ import { Carousel } from 'antd-mobile';
 
 import {AdvertSwiperWrap} from "./stlyleSelection"
 class AdvertSwiprt extends Component {
-  state={
-    imgHeight:160
-  }
-  render() {
 
+  render() {
+    // console.log(this.props)
     return (
-      <AdvertSwiperWrap>
+      <AdvertSwiperWrap
+      >
         {
-          this.props.images ? (
-            <>
+          this.props.images && (
                <Carousel
                   autoplay={true}
                   infinite
+                  dotStyle={
+                    {
+                      width:"6px",
+                      height:"6px", 
+                      border: "1px solid #fff",
+                      background: "transparent",
+                      opacity: .9,
+                      margin: "1px 4px",
+                      borderRadius:"6px",
+                      transition: "all 0.25s ease"
+                    }
+                  }
+                  dotActiveStyle={
+                    {
+                      width:"16px",
+                      height:"6px",
+                      background:"#fff",
+                      margin: "1px 4px",
+                      borderRadius:"6px",
+                      transition: "all 0.25s ease"
+                    }
+                  }
                   >
                   {this.props.images.map(item => (
-                    <a
-                      key={item.img_url}
-                      href="##"
-                      style={{height:this.state.imgHeight}}
-                    >
-                      <img
-                        src={item.img_url}
-                        alt=""
-                        onLoad={() => {
-                          // fire window resize event to change height
-                          window.dispatchEvent(new Event('resize'));
-                          this.setState({ imgHeight: 'auto' });
-                        }}
-                      />
-                    </a>
+                      <img key={item.img_url} src={item.img_url} alt="" />
                   ))}
-                </Carousel>
-            </>
-          ):null
+                </Carousel>)
         }
       </AdvertSwiperWrap>
     );

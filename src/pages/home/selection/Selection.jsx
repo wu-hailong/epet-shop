@@ -39,11 +39,11 @@ const mapDispacth = dispatch=>({
 
 class Selection extends Component {
 
-  async componentDidMount(){
+  componentDidMount(){
     let url = "/v3/index/main.html"
     let params = {
         do: "getStaticV415",
-        cdn_version: 201912061749191,
+        cdn_version: 201912101904291,
         pet_type: "dog",
         version: 435,
         is_single: 0,
@@ -57,17 +57,17 @@ class Selection extends Component {
   render(){
     // console.log(this.props)
     let { data:dataSource } = this.props
-    if(dataSource.current_page_name){
+    if(dataSource.datas){
       let data = {
-        menuList:dataSource.navs.menus.data,
-        swiperList:dataSource.list[0].data.images,
-        gridList:dataSource.list[0].data.menus,
-        hotData:dataSource.list[5].data,
-        topAdvert:dataSource.list[8].data,
-        centerAdcertData:dataSource.list[12].data,
-        bottomAdvertData:dataSource.list[16].data,
-        guessTitle:dataSource.list[19].data,
-        guessList:dataSource.list.slice(20)
+        menuList:dataSource.datas.navs.menus.data,
+        swiperList:dataSource.datas.list[0].data.images,
+        gridList:dataSource.datas.list[0].data.menus,
+        hotData:dataSource.datas.list[5].data,
+        topAdvert:dataSource.datas.list[8].data,
+        centerAdcertData:dataSource.datas.list[12].data,
+        bottomAdvertData:dataSource.datas.list[16].data,
+        guessTitle:dataSource.datas.list[19].data,
+        guessList:dataSource.datas.list.slice(20)
       }
       return (
         <SelectionWrap>

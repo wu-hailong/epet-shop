@@ -6,15 +6,6 @@ export const SelectionWrap = styled.div `
   background:#fff;
 `
 
-export const SlideWrap = styled.a `
-  display:inline-block;
-  width :100%;
-  height:73.33333%;
-  img{
-    width:100%;
-    height:100%;
-  }
-`
 export const TopWrap = styled.div `
   background: transparent;
   height:1.04rem;
@@ -77,6 +68,12 @@ export const TopSearchWrap = styled.div `
   }
 `
 export const SwiperWrap = styled.div`
+  height:0;
+  font-size:0;
+  padding-bottom:77.333333%;
+  img{
+    width:100%;
+  }
   .slider-decorator-0{
     bottom:.25rem !important;
   }
@@ -204,14 +201,10 @@ export const HotItemWrap = styled.div `
   }
 `
 export const AdvertSwiperWrap = styled.div `
-  margin-bottom:.35rem;
-  a{
-    width:3.75rem;
+    margin-bottom:.35rem;
     img{
       width:3.75rem;
     }
-  }
-
 `
 
 export const FooterWrap = styled.div `
