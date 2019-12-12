@@ -46,8 +46,7 @@ class Layout extends Component {
                 selectedTab: 'selection',
               });
             }}
-            >
-         
+            >        
             <Selection showNav={true}></Selection>
           </TabBar.Item>
           <TabBar.Item

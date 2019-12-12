@@ -7,7 +7,7 @@ import TopSearch from "./TopSearch"
 class TopMenu extends Component {
   render() {
     return (
-      <TopWrap>
+      <TopWrap {...this.props}>
           <TopSearch></TopSearch>
           <TopBar {...this.props}></TopBar>
       </TopWrap>

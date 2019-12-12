@@ -7,7 +7,7 @@ export const SelectionWrap = styled.div `
 `
 
 export const TopWrap = styled.div `
-  background: transparent;
+  background:${props=>props.background};
   height:1.04rem;
   width:100%;
   position:absolute;

@@ -7,18 +7,18 @@ import { withRouter } from "react-router-dom"
 @withRouter
 class Header extends Component {
   state={
-    type : "category"
+    type : this.props.history.location.pathname.substr(1)
   }
   handleClick = (type)=>{
     return ()=>{
       this.setState({
         type
       })
-      console.log(type)
       this.props.history.push(`/${type}`)
     }
   }
   render() {
+    console.log(this.props)
     return (
       <HeaderWrap>
         <div><span className={this.state.type ==="category" ? "active" : ""} onClick={this.handleClick("category")}>分类</span></div>

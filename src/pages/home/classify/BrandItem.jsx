@@ -8,6 +8,9 @@ class BrandItem extends Component {
           <img src={this.props.logo} alt=""/>
         </div>
         <p>{this.props.name}</p>
+        {
+        this.props.address && <p>{ this.props.address}</p>
+        }
       </BrandItemWrap>
     );
   }

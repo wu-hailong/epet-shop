@@ -139,3 +139,35 @@ export const BrandItemWrap = styled.li`
   }
 
 `
+
+export const BrandWrap  = styled.div `
+    overflow-y:scroll;
+    height:100%;
+    .title{
+      padding-top:20px;
+      font-size:12px;
+      text-align:center;
+      color:#999;
+      background: #fff;
+    }
+    ul{
+      display:flex;
+      flex-wrap:wrap;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+      background: #fff;
+      li{
+        width:33.3333% !important;
+        text-align:center;
+        margin-top: 20px;
+        padding: 0 5px;
+      }
+    }
+
+`
+export const LoadWrap =  styled.div`
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+`
