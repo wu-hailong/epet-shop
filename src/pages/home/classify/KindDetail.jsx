@@ -1,36 +1,28 @@
 import React, { Component } from 'react';
 
 import { KindDetailWrap } from "./classifyStyled"
-
+import BrandItem from "./BrandItem"
 class KindDetail extends Component {
   render() {
+
     return (
           <KindDetailWrap>
             <div>
-              狗狗主粮 
+              {this.props.title}
               <img src="http://static.epetht.com/static_wap/appmall/lib/goods/cate_right_img.png" alt=""/>
             </div>
             <ul>
-              <li>
-                <img src="https://img.epetht.com/nowater/2017-09/21/20/95ef871eb30d94dda553b3d728ffdab2.png" alt=""/>
-                <p>幼犬粮</p>
-              </li>
-              <li>
-                <img src="https://img.epetht.com/nowater/2017-09/21/20/95ef871eb30d94dda553b3d728ffdab2.png" alt=""/>
-                <p>幼犬粮</p>
-              </li>
-              <li>
-                <img src="https://img.epetht.com/nowater/2017-09/21/20/95ef871eb30d94dda553b3d728ffdab2.png" alt=""/>
-                <p>幼犬粮</p>
-              </li>
-              <li>
-                <img src="https://img.epetht.com/nowater/2017-09/21/20/95ef871eb30d94dda553b3d728ffdab2.png" alt=""/>
-                <p>幼犬粮</p>
-              </li>
-              <li>
-                <img src="https://img.epetht.com/nowater/2017-09/21/20/95ef871eb30d94dda553b3d728ffdab2.png" alt=""/>
-                <p>幼犬粮</p>
-              </li>
+              {this.props.list.map(item=>{
+                if(this.props.title !== "热门品牌"){
+                  return(
+                    <li key={item.id_param}>
+                      <img src={item.photo} alt=""/>
+                      <p>{item.name}</p>
+                    </li>
+                  )
+                }
+                return <BrandItem  key={item.name} {...item}></BrandItem>
+              })}
             </ul>
           </KindDetailWrap>
           )

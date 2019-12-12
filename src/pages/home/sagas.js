@@ -4,7 +4,7 @@ import * as types from "./action-types"
 
 import { get } from "utils/http"
 
-function* loadData(action) {
+function* loadSelectionData(action) {
   // console.log(action)
   let { url, params } = action
   try {
@@ -13,7 +13,24 @@ function* loadData(action) {
       params
     })
     // console.log(result)
-    yield put({type:types.LOADDATA,data:result})
+    yield put({type:types.LOADSELECTIONDATA,data:result})
+
+  } catch (e) {
+
+  }
+}
+
+function* loadCategoryData(action) {
+  // console.log(action)
+  let { url, params } = action
+  try {
+    let result = yield get({
+      url,
+      params
+    })
+    // console.log(result)
+    yield put({type:types.LOADCATEGORYDATA,data:result})
+
   } catch (e) {
 
   }
@@ -21,5 +38,6 @@ function* loadData(action) {
 
 export {
   types,
-  loadData as action //将loadData命名为action抛出
+  loadSelectionData as selectionAction, //将loadSelectionData命名为selectionAction抛出
+  loadCategoryData as categoryAction
 }

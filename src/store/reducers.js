@@ -1,9 +1,10 @@
 import { combineReducers } from "redux"
 
-import { reducers as list } from "pages/home/"
-
+import { reducers as home } from "pages/home/"
 export default combineReducers({
-    home : list
+    selection : home.loadSelectionData,
+    category : home.loadCategoryData,
+
 })
 
 

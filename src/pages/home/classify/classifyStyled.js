@@ -9,20 +9,21 @@ export const ClassifyWrap = styled.div `
 `
 
 export const HeaderWrap = styled.header `
-  height:.4rem;
-  padding:0 .15rem;
+  height:40px;
+  padding:0 15px;
   display:flex;
   background: #fff;
   border-bottom: 1px solid #cbcbcb;
+  position:relative;
   >div{
     flex:1;
     span{
       color:#333;
       display: inline-block;
-      line-height:.4rem;
-      height: .4rem;
-      padding: 0 .04rem;
-      font-size:.13rem;
+      line-height:40px;
+      height: 40px;
+      padding: 0 4px;
+      font-size:13px;
       font-weight:700;
       &.active{
         color:#41C856;
@@ -37,6 +38,12 @@ export const HeaderWrap = styled.header `
   >div:last-child{
     padding-left:5%;
   }
+  img{
+    position:absolute;
+    height:14px;
+    right:15px;
+    top:13px;
+  }
 `
 export const ContentWrap = styled.div  `
   flex:1;
@@ -49,12 +56,12 @@ export const ClassificationWrap = styled.div `
     background: #fff;
     overflow-y:scroll;
     ul{
-      width:.7rem;
+      width:70px;
       li {
-        height:.5rem;
-        line-height:.5rem;
+        height:50px;
+        line-height:50px;
         text-align:center;
-        font-size:.13rem;
+        font-size:13px;
         border-bottom: 1px solid #f3f4f5;
         color:#000;
         &.active{
@@ -70,12 +77,17 @@ export const ClassificationWrap = styled.div `
     flex:1;
     margin-left:.05rem;
     margin-top:.05rem;
+    .top-img{
+      img{
+        width:100%;
+      }
+    }
   }
 `
 export const KindDetailWrap = styled.div `
     padding: .05rem .05rem .2rem;
     border-top: 1px solid #f3f4f5;
-    div:first-child{
+    >div:first-child{
       font-size:.12rem;
       color:#999;
       padding:.1rem 0 0 .05rem;
@@ -101,10 +113,29 @@ export const KindDetailWrap = styled.div `
         p{
           margin-top:.1rem;
           height:.2rem;
+          font-size:.13rem;
           line-height:.2rem;
           color:#333;
+          text-overflow:ellipsis;
+          white-space:nowrap;
+          overflow:hidden;
         }
       }
     }
+`
+export const BrandItemWrap = styled.li`
+  width:50% !important;
+  >div{
+    height:55px;
+    border: 1px solid #f3f4f5;
+    img{
+      height:45px;
+      width:auto !important;
+      margin-top:4px;
+    }
+  }
+  P{
+    font-size:.12rem !important;
+  }
 
 `

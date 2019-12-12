@@ -6,7 +6,7 @@ import Cart       from "./cart/Cart"
 import Mine       from "./mine/Mine"
 
 //reducer
-import reducers   from "./reducers" 
+import * as reducers   from "./reducers" 
 //saga
 import * as sagas from "./sagas"
 

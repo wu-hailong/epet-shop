@@ -7,4 +7,14 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+  app.use(
+    '/v8',
+    proxy({
+      target: 'https://mallapi.epetht.com',
+      changeOrigin: true,
+      pathRewrite:{
+        "^/v8":""
+      }
+    })
+  );
 }; 

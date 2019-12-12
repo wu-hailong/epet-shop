@@ -2,10 +2,11 @@ import { takeEvery } from 'redux-saga/effects'
 
 import { sagas as home } from  "pages/home/"
 
-const { GETDATA }  = home.types
+const { GETDSELECTIONATA ,GETCATEGORYDATA}  = home.types
 
 function* sagas() {
-  yield takeEvery(GETDATA , home.action);
+  yield takeEvery(GETDSELECTIONATA , home.selectionAction);
+  yield takeEvery(GETCATEGORYDATA , home.categoryAction);
 }
 
 export default sagas;

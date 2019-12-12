@@ -18,18 +18,16 @@ import Footer       from  "./Footer"
 
 // import { get } from "utils/http"
 
-import { GETDATA } from "../action-types"
+import { GETDSELECTIONATA } from "../action-types"
 
-const mapState = state=>{
-  return {
-    data:state.home.list //在store/reducers
-  }
-}
+const mapState = state=> ({
+    data:state.selection.list //在store/reducers
+  })
 
 const mapDispacth = dispatch=>({
     loadData({url,params}){
       dispatch({
-        type:GETDATA,
+        type:GETDSELECTIONATA,
         url,
         params
       })
