@@ -136,6 +136,9 @@ export const BrandItemWrap = styled.li`
   }
   P{
     font-size:.12rem !important;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
   }
 
 `

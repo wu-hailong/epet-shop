@@ -68,7 +68,7 @@ class Classification extends Component {
     this.props.loadData({url,params})
   }
   render() {
-    console.log(this.props.data.topadv)
+    // console.log(this.props.data.topadv)
     // console.log(this.props.data)
     return (
        <>

@@ -18,7 +18,6 @@ class Header extends Component {
     }
   }
   render() {
-    console.log(this.props)
     return (
       <HeaderWrap>
         <div><span className={this.state.type ==="category" ? "active" : ""} onClick={this.handleClick("category")}>分类</span></div>

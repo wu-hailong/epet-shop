@@ -1,14 +1,13 @@
 import styled from "styled-components"
 
-import msgIco from "assets/images/msg-ico.png"
-
 export const SelectionWrap = styled.div `
   background:#fff;
 `
 
 export const TopWrap = styled.div `
   background:${props=>props.background};
-  height:1.04rem;
+  padding-top:25px;
+  height:104px;
   width:100%;
   position:absolute;
   top:0;
@@ -17,56 +16,27 @@ export const TopWrap = styled.div `
 
 `
 export const TopBarWrap = styled.div `
-  height:.44rem;
-  margin-top:.05rem;
+  height:44px;
+  margin-top:5px;
   overflow-x:scroll;
   ul{
     display:flex;
-    line-height:.44rem;
+    line-height:44px;
     white-space:nowrap;
     width:140%;
     li{
-      font-size:.14rem;
+      font-size:14px;
       text-align:center;
       flex:1;
       color:#fff;
     }
     >li:first-child{
-      font-size:.2rem;
+      font-size:20px;
       font-weight:700;
     }
   }
 `
-export const TopSearchWrap = styled.div `
-  height:.3rem;
-  margin-top:.25rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 .15rem;
-  >div:first-child{
-    flex:1;
-    height:100%;
-    margin-right:.15rem;
-    background: rgba(255,255,255,0.8);
-    border-radius:.3rem;
-    line-height:.3rem;
-    img{
-      height:.1rem;
-      width:.1rem;
-      margin:0 .05rem 0 .15rem;
-    }
-    span{
-      font-size:.12rem;
-      color: #666;
-    }
-  }
-  >div:last-child{
-    width:.25rem;
-    height:.25rem;
-    background:url(${msgIco}) center / 100% no-repeat;
-  }
-`
+
 export const SwiperWrap = styled.div`
   height:0;
   font-size:0;

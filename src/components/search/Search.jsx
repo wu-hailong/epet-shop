@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import { TopSearchWrap } from "./stlyleSelection"
+import { SearchWrap } from "../styled/commonStyled"
 import searchIco from "assets/images/search-btn.png"
-class TopSearch extends Component {
+class Search extends Component {
   render() {
     return (
-      <TopSearchWrap>
+      <SearchWrap
+      {...this.props}
+      >
         <div className="search">
             <img src={searchIco} alt=""/>
             <span>请输入搜索内容</span>
         </div>
         <div className="msg"></div>
-      </TopSearchWrap>
+      </SearchWrap>
     );
   }
 }
 
-export default TopSearch;
+export default Search;

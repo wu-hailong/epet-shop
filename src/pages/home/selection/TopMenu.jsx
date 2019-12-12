@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import { TopWrap } from "./stlyleSelection"
 
 import TopBar from "./TopBar"
-import TopSearch from "./TopSearch"
+import Search from "components/search/Search"
 class TopMenu extends Component {
   render() {
     return (
       <TopWrap {...this.props}>
-          <TopSearch></TopSearch>
+          <Search
+            searchType="sele"
+          ></Search>
           <TopBar {...this.props}></TopBar>
       </TopWrap>
     );
