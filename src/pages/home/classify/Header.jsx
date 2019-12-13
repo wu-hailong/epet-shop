@@ -7,7 +7,7 @@ import { withRouter } from "react-router-dom"
 @withRouter
 class Header extends Component {
   state={
-    type : this.props.history.location.pathname.substr(1)
+    type : "category"
   }
   handleClick = (type)=>{
     return ()=>{
@@ -18,13 +18,13 @@ class Header extends Component {
     }
   }
   render() {
-    return (
-      <HeaderWrap>
-        <div><span className={this.state.type ==="category" ? "active" : ""} onClick={this.handleClick("category")}>分类</span></div>
-        <div><span className={this.state.type ==="brand" ? "active" : "" } onClick={this.handleClick("brand")}>品牌</span></div>
-        <img src={searchIco} alt=""/>
-      </HeaderWrap>
-    );
+      return (
+            <HeaderWrap>
+              <div><span className={this.state.type ==="category" ? "active" : ""} onClick={this.handleClick("category")}>分类</span></div>
+              <div><span className={this.state.type ==="brand" ? "active" : "" } onClick={this.handleClick("brand")}>品牌</span></div>
+              <img src={searchIco} alt=""/>
+            </HeaderWrap>
+          )
   }
 }
 
