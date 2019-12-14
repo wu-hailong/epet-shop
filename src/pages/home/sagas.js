@@ -35,9 +35,25 @@ function* loadCategoryData(action) {
 
   }
 }
+function* loadBookData(action) {
+  // console.log(action)
+  let { url, params } = action
+  try {
+    let result = yield get({
+      url,
+      params
+    })
+    // console.log(result)
+    yield put({type:types.LOADBOOKDATA,data:result})
+
+  } catch (e) {
+
+  }
+}
 
 export {
   types,
   loadSelectionData as selectionAction, //将loadSelectionData命名为selectionAction抛出
-  loadCategoryData as categoryAction
+  loadCategoryData as categoryAction,
+  loadBookData as bookAction
 }

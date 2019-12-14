@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import {HeaderWrap , HeaderMenuWrap} from "../styled/commonStyled"
+import { withRouter } from "react-router-dom"
+@withRouter
 class CommonHeader extends Component {
   state = {
     menuHeight:"0px"
+  }
+  goBack = ()=>{
+    this.props.history.goBack()
   }
   handleClick = ()=>{
     if(this.state.menuHeight === "0px"){
@@ -22,7 +27,7 @@ class CommonHeader extends Component {
          borderWidth="0 0 1px 0"
          borderColor="#e5e5e5"
         >
-          <div></div>
+          <div onClick={this.goBack}></div>
           <div>{this.props.children}</div>
           <div onClick={this.handleClick}></div>
         </HeaderWrap>

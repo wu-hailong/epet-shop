@@ -1,4 +1,6 @@
 export const GETDSELECTIONATA = 'home/get_selection_data'
 export const GETCATEGORYDATA = 'home/get_category_data'
+export const GETBOOKDATA = 'home/get_book_data'
 export const LOADSELECTIONDATA = 'home/load_selection_data'
 export const LOADCATEGORYDATA = 'home/load_category_data'
+export const LOADBOOKDATA = 'home/load_book_data'

@@ -13,16 +13,16 @@ class Classify extends Component {
       <ContentWrap>
         <Switch>
           <Route 
-            path='/category'
+            path='/home/category'
             component={Classification}
           />
           <Route 
-            path="/brand"
+            path="/home/brand"
             component={Brand}
           />
           <Redirect
-            from='/'
-            to='/category'
+            from='/home'
+            to='/home/category'
           />
         </Switch>
       </ContentWrap>

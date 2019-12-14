@@ -21,7 +21,7 @@ import {ActivityIndicator} from 'antd-mobile'
 import { GETDSELECTIONATA } from "../action-types"
 
 const mapState = state=> ({
-    data:state.selection.list //在store/reducers
+    data:state.home.list //在store/reducers
   })
 
 const mapDispacth = dispatch=>({

@@ -1,31 +1,29 @@
-import { LOADSELECTIONDATA ,LOADCATEGORYDATA} from "./action-types"
+import { LOADSELECTIONDATA ,LOADCATEGORYDATA ,LOADBOOKDATA} from "./action-types"
 
 const defaultState = {
   list:{},
-  category:{}
+  category:{},
+  bookData:{}
 }
 
-const loadSelectionData = (state=defaultState , action)=>{
+export default (state=defaultState , action)=>{
   switch(action.type){
       case LOADSELECTIONDATA:
         return {
+          ...state,
           list:action.data
         }
-      default:
-        return state
-  }
-}
-const loadCategoryData = (state=defaultState , action)=>{
-  switch(action.type){
       case LOADCATEGORYDATA:
         return {
+          ...state,
           category:action.data
+        }
+      case LOADBOOKDATA:
+        return {
+          ...state,
+          bookData:action.data
         }
       default:
         return state
   }
-}
-export {
-  loadSelectionData,
-  loadCategoryData
 }

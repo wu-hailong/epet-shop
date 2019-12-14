@@ -8,7 +8,7 @@ import { ClassificationWrap , LoadWrap} from "./classifyStyled"
 import { ActivityIndicator } from "antd-mobile"
 import KindDetail from "./KindDetail"
 const mapState = state=>({
-    data:state.category.category
+    data:state.home.category
 })
 const mapDispatch = dispatch=>({
   loadData({url,params}){

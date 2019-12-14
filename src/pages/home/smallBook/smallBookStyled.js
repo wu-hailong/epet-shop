@@ -2,6 +2,11 @@ import styled from "styled-components"
 
 import border from "components/styled/border"
 
+export const ContentWrap = styled.div`
+  height:100%;
+  overflow-y:scroll;
+`
+
 export const HeadSearch =border(styled.div`
   height:86px;
   background: #fff;
@@ -22,6 +27,12 @@ export const HeadSearchWrap = styled.div `
   }
   >div:last-child{
     padding-right:0 !important;
+    .search{
+      img{
+        height: 15px;
+        width: 15px;
+      }
+    }
   }
   .position{
     height:16px;
@@ -91,6 +102,12 @@ export const ContentListWrap = styled.ul`
             font-size:14px;
             line-height:14px;
             font-weight:normal;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
           }
           p{
             margin-top: 8px;
@@ -135,5 +152,138 @@ export const ContentListWrap = styled.ul`
         width:100%;
       }
     }
+    .video-item{
+      margin:25px auto 0;
+      width:92%;
+      background: #fff;
+      box-shadow: 0px 10px 25px 0px rgba(23,23,23,0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom:25px;
+      >div:first-child{
+        position: relative;
+        img{
+          width:100%;
+        }
+        >div:first-child{
+          position:absolute;
+          height:100%;
+          width:100%;
+          background: rgba(0,0,0,.4);
+        }
+        >div:nth-child(2){
+          position:absolute;
+          border-radius: 0px 60px 60px 66px;
+          padding: 0 7.5px;
+          opacity: 0.99;
+          font-weight: 400;
+          background: #f3f4f5;
+          position: absolute;
+          right: 10px;
+          bottom: 12px;
+          font-size: 9px;
+          color: #999
+
+        }
+        p{
+          position:absolute;
+          left: 15px;
+          bottom: 9px;
+          font-size: 15px;
+          color:#fff;
+        }
+      }
+      >div:last-child{
+        background: #fff;
+        padding: 15px 0px 8px 15px;  
+        width:100%;
+        overflow-x:scroll;
+      }
+    }
   }
+`
+export const LoadWrap =  styled.div`
+  width:100px;
+  margin:50% auto 0
+`
+export const ScrollWrap = styled.div`
+    display:flex;
+    width:max-content;
+    >div{
+      width: 110px;
+      height:100%;
+      margin-right: 10px;
+      >div:first-child{
+        position:relative;
+        img{
+          width:100%;
+          border-radius:5px;
+        }
+        >div{
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          background: #000;
+          border-radius: 14px;
+          height:14px;
+          padding:0 7px;
+          line-height:1;
+          opacity:.4;
+          img{
+            width: 6px;
+            margin-right:2px;
+          }
+          span{
+            color:#fff;
+            font-size:10px;
+          }
+        }
+      }
+      p{
+        font-size: 10px;
+        margin-top: 6px;
+        line-height:1.2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      
+  }
+
+`
+export const EmptyCollectionWrap = styled.div`
+  height:100%;
+  background: #fff;
+  text-align:center;
+  padding-top:20%;
+  >div:first-child{
+    height: 180px;
+    width: 200px;
+    margin: 0 auto;
+    background: url(${props=>props.background}) 0 0 / 200px auto no-repeat;
+    background-position: 0 -812px;
+  }
+  h3{
+    font-size:15px;
+    margin-top:15px;
+    color:#666;
+    font-weight:normal;
+  }
+  p{
+    font-size:12px;
+    color:#b7b7b7;
+  }
+  .login-btn{
+    width: 101px;
+    height: 35px;
+    border: 1px solid #41c856;
+    line-height: 35px;
+    color: #41c856;
+    text-align: center;
+    border-radius: 20px;
+    margin: 15px auto;
+  }
+
 `
