@@ -12,12 +12,7 @@ class Brand extends Component {
     let result =await get({
       url:"/v3/brand/list/main.html",
       params:{
-        pet_type: 'dog',
-        system: 'wap',
-        isWeb: 1,
-        version: 303,
-        distinct_id: '16e64c78ae5184-01373374343693-67e1b3f-1327104-16e64c78ae6653',
-        _: 1576121931318
+        pet_type: 'dog'
       }
     })
     this.setState({

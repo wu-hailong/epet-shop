@@ -83,11 +83,13 @@ export const HotWrap = styled.div`
 `
 export const RecentlyWrap = styled.div`
   background: #fff;
-  padding-left: 12px;
-  ul>li{
+  ul{
+    padding-left: 12px;
+    li{
     border-bottom: 1px solid #d7d7d7;
     line-height: 40px;
     font-size: 12px;
+    }
   }
   ul>li:last-child{
     border:none;

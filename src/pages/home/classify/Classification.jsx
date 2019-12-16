@@ -31,12 +31,7 @@ class Classification extends Component {
     let result = await get({
       url:"/v3/goods/category/main.html",
       params:{
-        pet_type: "dog",
-        version: 358,
-        system: "wap",
-        isWeb: 1,
-        distinct_id: "16e64c78ae5184-01373374343693-67e1b3f-1327104-16e64c78ae6653",
-        _: Date.now()
+        pet_type: "dog"
       }
     })
     this.setState({
@@ -56,14 +51,7 @@ class Classification extends Component {
     let params = {
       do: 'getChildren',
       owner: currentId,
-      pet_type: 'dog',
-      issite: true,
-      version: 358,
-      ishk: true,
-      system: 'wap',
-      isWeb: 1,
-      distinct_id: '16e64c78ae5184-01373374343693-67e1b3f-1327104-16e64c78ae6653',
-      _: Date.now()
+      pet_type: 'dog'
     }
     this.props.loadData({url,params})
   }

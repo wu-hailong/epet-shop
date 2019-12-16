@@ -43,13 +43,8 @@ class Selection extends Component {
     let url = "/v3/index/main.html"
     let params = {
         do: "getStaticV415",
-        // cdn_version: 201912101904291,
         pet_type: "dog",
-        version: 435,
-        is_single: 0,
-        isWeb: 1,
-        system: "wap",
-        distinct_id: '16e64c78ae5184-01373374343693-67e1b3f-1327104-16e64c78ae6653'
+        version: 435
     }
     this.props.loadData({url,params})
   }

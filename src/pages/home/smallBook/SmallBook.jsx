@@ -31,11 +31,7 @@ class SmallBook extends Component {
         do: 'GetList',
         param: 0,
         page: 1,
-        pet_type: 'dog',
-        system: 'wap',
-        isWeb: 1,
-        version: 303,
-        distinct_id: '16e64c78ae5184-01373374343693-67e1b3f-1327104-16e64c78ae6653'
+        pet_type: 'dog'
       }
     // console.log(result)
     this.props.loadData({url,params})
@@ -47,11 +43,7 @@ class SmallBook extends Component {
         do: 'GetList',
         param,
         page: 1,
-        pet_type: 'dog',
-        system: 'wap',
-        isWeb: 1,
-        version: 303,
-        distinct_id: '16e64c78ae5184-01373374343693-67e1b3f-1327104-16e64c78ae6653'
+        pet_type: 'dog'
       }
     })
   }
