@@ -89,6 +89,10 @@ export const RecentlyWrap = styled.div`
     border-bottom: 1px solid #d7d7d7;
     line-height: 40px;
     font-size: 12px;
+    padding-right:10px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
     }
   }
   ul>li:last-child{

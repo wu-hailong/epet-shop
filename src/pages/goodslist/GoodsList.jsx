@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import CommonHeader from "components/header/CommonHeader"
 import NavBar from "./NavBar"
+import ListItem from "./ListItem"
 import searchIco from "assets/images/search-btn.png"
 import { ListWrap , SearchWrap} from "./listStyled"
 import { get } from "utils/http"
+import NotFind from './NotFind';
 class GoodsList extends Component {
   state={
-    keyword: this.props.location.state.keyword
+    keyword: this.props.location.state.keyword,
+    list:[]
   }
   async componentDidMount(){
     let result = await get({
@@ -16,7 +19,10 @@ class GoodsList extends Component {
         extend_pam:`keyword:${this.state.keyword}`
       }
     })
-    console.log(result)
+    this.setState({
+      list:result.list
+    })
+    console.log(result.list)
   }
   toSearch=()=>{
     this.props.history.push({
@@ -32,11 +38,16 @@ class GoodsList extends Component {
           <div onClick={this.toSearch}><img src={searchIco} alt=""/>{this.state.keyword}</div>
         </SearchWrap>
         <NavBar></NavBar>
-        <ul className="list">
-          <li>
-
-          </li>
-        </ul>
+        { this.state.list.length !== 0
+          ? <ul className="list">
+              {
+                this.state.list.map(item=>{
+                  return <ListItem key={item.gid} {...item}></ListItem>
+                })
+              }
+            </ul>
+          : <NotFind keyword={this.state.keyword}></NotFind>
+        }
       </ListWrap>
     );
   }

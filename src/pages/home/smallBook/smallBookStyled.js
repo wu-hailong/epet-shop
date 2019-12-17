@@ -68,6 +68,10 @@ export const MenuWrap = styled.ul`
 export const ContentListWrap = styled.ul`
   background: #fff;
   li{
+    padding-top:20px;
+    &:last-child{
+      padding-bottom:25px;
+    }
     .img-menu{
       display:flex;
       >div{
@@ -78,7 +82,7 @@ export const ContentListWrap = styled.ul`
       }
     }
     .list-item{
-      margin:20px auto;
+      margin:0px auto;
       width:92%;
       padding:15px;
       box-shadow: 0px 10px 25px 0px rgba(23,23,23,0.1);
@@ -146,20 +150,19 @@ export const ContentListWrap = styled.ul`
     .img-item{
       box-shadow: 0px 10px 25px 0px rgba(23,23,23,0.1);
       width:92%;
-      margin:20px auto;
+      margin:0px auto;
       border-radius:10px;
       img{
         width:100%;
       }
     }
     .video-item{
-      margin:25px auto 0;
+      margin:5px auto 0;
       width:92%;
       background: #fff;
       box-shadow: 0px 10px 25px 0px rgba(23,23,23,0.1);
       border-radius: 5px;
       overflow: hidden;
-      margin-bottom:25px;
       >div:first-child{
         position: relative;
         img{
