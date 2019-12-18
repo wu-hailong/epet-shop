@@ -19,9 +19,8 @@ import {ActivityIndicator} from 'antd-mobile'
 // import { get } from "utils/http"
 
 import { GETDSELECTIONATA } from "../action-types"
-
 const mapState = state=> ({
-    data:state.home.list //在store/reducers
+    data:state.getIn(["home","list"]) //在store/reducers
   })
 
 const mapDispacth = dispatch=>({
@@ -33,8 +32,6 @@ const mapDispacth = dispatch=>({
       })
     }
   })
-
-
 class Selection extends Component {
   state={
     topmenuBg:"transparent"

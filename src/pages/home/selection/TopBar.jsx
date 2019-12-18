@@ -14,7 +14,7 @@ class TopBar extends Component {
                   <li key={item.param} >
                     <img 
                       src={item.img.default_img.img_url}
-                      style={{width:".69rem",height:".2rem"}}
+                      style={{width:"69px",height:"20px"}}
                       alt=""/>
                   </li>
                 )

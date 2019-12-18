@@ -1,28 +1,19 @@
 import { LOADSELECTIONDATA ,LOADCATEGORYDATA ,LOADBOOKDATA} from "./action-types"
-
-const defaultState = {
+import { Map } from "immutable"
+const defaultState = Map({
   list:{},
   category:{},
   bookData:{}
-}
+})
 
 export default (state=defaultState , action)=>{
   switch(action.type){
       case LOADSELECTIONDATA:
-        return {
-          ...state,
-          list:action.data
-        }
+        return state.set("list",action.data)
       case LOADCATEGORYDATA:
-        return {
-          ...state,
-          category:action.data
-        }
+        return state.set("category",action.data)
       case LOADBOOKDATA:
-        return {
-          ...state,
-          bookData:action.data
-        }
+        return state.set("bookData",action.data)
       default:
         return state
   }

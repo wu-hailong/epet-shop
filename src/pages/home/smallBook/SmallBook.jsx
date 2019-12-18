@@ -9,8 +9,9 @@ import {ContentWrap, HeadSearch ,HeadSearchWrap,MenuWrap,LoadWrap} from "./small
 import { connect } from "react-redux"
 import { GETBOOKDATA } from "../action-types"
 import { ActivityIndicator } from 'antd-mobile'
+// import BScroll from 'better-scroll'
 const mapState = state=>({
-  data:state.home.bookData
+  data:state.getIn(["home","bookData"])
 })
 const mapDispatch= dispatch=>({
   loadData({url , params}){
@@ -35,6 +36,7 @@ class SmallBook extends Component {
       }
     // console.log(result)
     this.props.loadData({url,params})
+    // let bScroll = new BScroll(".scroll-wrap")
   }
   handleClick =(param)=>()=>{
     this.props.loadData({
@@ -81,7 +83,7 @@ class SmallBook extends Component {
                   </MenuWrap>
               </HeadSearch>
               {list.length !== 0
-              ? <ContentList {...list}></ContentList>
+              ? <div className="scroll-wrap"><ContentList {...list}></ContentList></div>
               : this.props.data.data ? <EmptyCollection></EmptyCollection> : <LoadWrap><ActivityIndicator  text="loading..."/></LoadWrap>
               }
           </ContentWrap>
