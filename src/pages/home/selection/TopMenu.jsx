@@ -10,6 +10,7 @@ class TopMenu extends Component {
       <TopWrap {...this.props}>
           <Search
             searchType="sele"
+            sty = {this.props.sty}
           ></Search>
           <TopBar {...this.props}></TopBar>
       </TopWrap>

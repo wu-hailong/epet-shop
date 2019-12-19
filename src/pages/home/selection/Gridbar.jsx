@@ -6,7 +6,7 @@ class Gridbar extends Component {
     return (
       <GridbarWrap>
           <ul> 
-              {
+              { this.props.gridList &&
                 this.props.gridList.map((item)=>{
                   return <li key={item.name}><img src={item.img_url} alt={item.name}/></li>
                 })

@@ -10,4 +10,7 @@ export const LayoutWrap = styled.div `
     box-shadow: 1px 2px 25px 0px rgba(0,0,0,0.1);
     height:.52rem;
   }
+  .am-tabs-pane-wrap{
+    overflow:hidden;
+  }
 ` 

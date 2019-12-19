@@ -78,7 +78,7 @@ export const SearchWrap = styled.div `
     flex:1;
     height:100%;
     margin-right:15px;
-    background:${props=>props.searchType === "book" ? "rgba(240,240,240,1)" : "rgba(255,255,255,0.8)"};
+    background:${props=>props.searchType === "book" ? "rgba(240,240,240,1)" : "#f7f7f7"};
     border-radius:30px;
     line-height:30px;
     img{
@@ -94,6 +94,6 @@ export const SearchWrap = styled.div `
   .msg{
     width:25px;
     height:25px;
-    background:url(${props=>props.searchType === "book" ? msgActiveIco : msgIco}) center / 100% no-repeat;
+    background:url(${props=>props.searchType === "book"|| props.sty.active ? msgActiveIco : msgIco}) center / 100% no-repeat;
   }
 `

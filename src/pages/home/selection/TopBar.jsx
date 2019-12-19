@@ -5,9 +5,11 @@ import { TopBarWrap } from "./stlyleSelection"
 class TopBar extends Component {
   render() {
     return (
-      <TopBarWrap>
+      <TopBarWrap
+      {...this.props}
+      >
         <ul>
-          {
+          { this.props.menuList &&
             this.props.menuList.map((item,index)=>{
               if(index === 4 && item.img.default_img !==""){
                 return (

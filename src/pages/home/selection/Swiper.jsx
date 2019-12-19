@@ -38,7 +38,7 @@ class Swiper extends Component {
             }
           }
         >
-          {
+          { swiperList &&
             Object.keys(swiperList).map(key =>{
               return (  
                   <img

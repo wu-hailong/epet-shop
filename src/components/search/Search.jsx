@@ -12,7 +12,6 @@ class Search extends Component {
     })
   }
   render() {
-    // console.log(this.props.searchType)
     return (
       <SearchWrap
       {...this.props}

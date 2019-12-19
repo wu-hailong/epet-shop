@@ -8,14 +8,10 @@ import NavIco from "assets/images/nav-ico.png"
 
 //样式
 import { LayoutWrap } from "./layoutStyled"
-
 class Layout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+   state = {
       selectedTab: 'selection'
-    };
-  }
+    }
 
   render() {
     return (
@@ -23,6 +19,7 @@ class Layout extends Component {
         <TabBar
           barTintColor="#f3f4f5"
           prerenderingSiblingsNumber={0}
+          // noRenderContent={true}
         >
           <TabBar.Item
             icon={

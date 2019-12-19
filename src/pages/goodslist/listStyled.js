@@ -5,6 +5,16 @@ import border from "components/styled/border"
 export const ListWrap = styled.div`
   height:100%;
   overflow-y:scroll;
+  .load-more{
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    background: #fff;
+    img{
+      width:30px;
+      height:30px;
+    }
+  }
 `
 export const ListItemWrap = border(
 

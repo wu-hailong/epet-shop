@@ -1,18 +1,34 @@
 import styled from "styled-components"
 
 export const SelectionWrap = styled.div `
-  background:#fff;
+   background:#fff;
+   height:100%;
+   overflow-y:scroll;
+   .go-top{
+    position: fixed;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    bottom:70px;
+    display:none;
+    img{
+      width:100%;
+    }
+   }
+  .show{
+    display:block;
+  }
 `
 
 export const TopWrap = styled.div `
-  background:${props=>props.background};
+  background:${props=>props.sty.bg};
   padding-top:25px;
   height:104px;
   width:100%;
   position:absolute;
   top:0;
   left:0;
-  z-index:10;
+  z-index:1000;
 
 `
 export const TopBarWrap = styled.div `
@@ -28,19 +44,21 @@ export const TopBarWrap = styled.div `
       font-size:14px;
       text-align:center;
       flex:1;
-      color:#fff;
+      color:${props=>props.sty.color};
     }
     >li:first-child{
       font-size:20px;
       font-weight:700;
     }
   }
+
 `
 
 export const SwiperWrap = styled.div`
   height:0;
   font-size:0;
   padding-bottom:77.333333%;
+
   img{
     width:100%;
   }
@@ -172,6 +190,7 @@ export const HotItemWrap = styled.div `
 `
 export const AdvertSwiperWrap = styled.div `
     margin-bottom:.35rem;
+    background: #fff;
     img{
       width:3.75rem;
     }

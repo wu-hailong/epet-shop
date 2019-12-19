@@ -5,6 +5,18 @@ import border from "components/styled/border"
 export const ContentWrap = styled.div`
   height:100%;
   overflow-y:scroll;
+  .scroll-wrap{
+    height:100%;
+  }
+  .abso{
+    position:absolute;
+    width:100%;
+    top:0;
+    z-index:10;
+  }
+  .search-wrap{
+    height:86px;
+  }
 `
 
 export const HeadSearch =border(styled.div`
@@ -75,9 +87,10 @@ export const ContentListWrap = styled.ul`
     .img-menu{
       display:flex;
       >div{
-        max-width:75px;
+        flex:1;
+        text-align:center;
         img{
-          width:100%;
+          max-width:75px;
         }
       }
     }
