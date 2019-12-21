@@ -4,20 +4,6 @@ export const SelectionWrap = styled.div `
    background:#fff;
    height:100%;
    overflow-y:scroll;
-   .go-top{
-    position: fixed;
-    right: 10px;
-    width: 28px;
-    height: 28px;
-    bottom:70px;
-    display:none;
-    img{
-      width:100%;
-    }
-   }
-  .show{
-    display:block;
-  }
 `
 
 export const TopWrap = styled.div `

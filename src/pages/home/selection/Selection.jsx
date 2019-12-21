@@ -15,10 +15,10 @@ import Hot          from  "./Hot"
 import AdvertSwiper from  "./AdvertSwiper"
 import GuessLike    from  "components/guesslike/GuessLike"
 import Footer       from  "./Footer"
+import GoTop from "components/gotop/GoTop"
 import {ActivityIndicator} from 'antd-mobile'
 
 import { GETDSELECTIONATA } from "../action-types"
-import goTopIco from "assets/images/go-top.png"
 
 const mapState = state=> ({
     data:state.getIn(["home","list"]) //在store/reducers
@@ -140,9 +140,7 @@ class Selection extends Component {
                       }    
                       <GuessLike title={data.guessTitle} data={data.guessList}></GuessLike>
                       <Footer></Footer>
-                      <div className={`go-top ${ this.state.showGoTop ? "show":""}`} onClick={this.goTop}>
-                        <img src={goTopIco} alt=""/>
-                      </div>
+                      <GoTop showGoTop={this.state.showGoTop} goTop={this.goTop}></GoTop>
                     </>
                   :  <ActivityIndicator toast text="正在加载..." />
                 }

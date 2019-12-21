@@ -9,3 +9,12 @@ export const get = ({url , params})=>{
     return err.message
   })
 }
+export const post = ({url , data})=>{
+  return axios({ url, data, method:"post"})
+  .then((result)=>{
+    return result.data
+  })
+  .catch((err)=>{
+    return err.message
+  })
+}

@@ -155,3 +155,29 @@ export const SearchArticleWrap = styled.div`
   }
 
 `
+export const SearchWordWrap = styled.div`
+  height:50px;
+  background: #fff;
+  padding:10px 0;
+  >div{
+    width: 92%;
+    height: 30px;
+    background: rgba(240,240,240,1);
+    opacity: 0.8;
+    border-radius: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    margin:0 auto;
+    font-size: 12px;
+    font-weight: 300;
+    img{
+      height:14px;
+      width:14px;
+      margin-right:15px;
+    }
+  }
+
+`
+export const ListWrap = styled.ul`
+background: #fff;
+`

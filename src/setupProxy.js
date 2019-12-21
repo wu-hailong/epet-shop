@@ -10,10 +10,10 @@ module.exports = function(app) {
   app.use(
     '/v8',
     proxy({
-      target: 'https://mallapi.epetht.com',
+      target: 'https://mall.api.epet.com',
       changeOrigin: true,
       pathRewrite:{
-        "^/v8":""
+        "^/v8":"/v3"
       }
     })
   );

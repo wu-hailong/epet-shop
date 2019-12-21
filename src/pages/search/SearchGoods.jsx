@@ -79,7 +79,7 @@ class SearchGoods extends Component {
               <header>
                 <div onClick={this.goBack}></div>
                 <div>
-                  <input ref="inputValue" type="text" placeholder="搜索你喜欢的宝贝" onKeyDown={this.handleKeyDown}/>
+                  <input ref="inputValue" type="text" placeholder="搜索你喜欢的宝贝" onKeyDown={this.handleKeyDown} autoFocus/>
                   <i></i>
                 </div>
                 <span>搜索</span>

@@ -131,22 +131,3 @@ export const NavBarWrap  = border(
   }
 `
 )
-export const NotFindWrap = styled.div`
-    background: #f5f5f5;
-    height:100%;
-    overflow:hidden;
-    padding:20px;
-    text-align:center;
-    img{
-      width:35%;
-      margin: 0 0 10px;
-    }
-    p{
-      color:#666;
-      text-align:center;
-      overflow:hidden;
-      span{
-        color:#f11;
-      }
-    }
-`

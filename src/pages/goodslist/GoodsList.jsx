@@ -6,16 +6,19 @@ import searchIco from "assets/images/search-btn.png"
 import loadMoreIco from "assets/images/load-more.gif"
 import { ListWrap , SearchWrap} from "./listStyled"
 import { get } from "utils/http"
-import NotFind from './NotFind';
+import NotFind from 'components/404/NotFind'
+import GoTop from "components/gotop/GoTop"
 import { ActivityIndicator } from "antd-mobile"
 import BScroll from "better-scroll"
+import _ from "lodash"
 class GoodsList extends Component {
   state={
     keyword: this.props.location.state.keyword || "",
     cateid:this.props.location.state.cateid,
     list:[],
     nogoods:false,
-    nodata:false
+    nodata:false,
+    showGoTop:false
   }
   async componentDidMount(){
     let page = 1
@@ -32,13 +35,13 @@ class GoodsList extends Component {
       list:result.list,
       nogoods:result.no_goods_tip ? true : false
     })
-    let bScroll = new BScroll(".scroll-wrap",{
+    this.bScroll = new BScroll(".scroll-wrap",{
       click:true,
       probeType:2,
       pullUpLoad:true
     })
    //上拉加载更多
-    bScroll.on("pullingUp",async()=>{
+    this.bScroll.on("pullingUp",async()=>{
       // console.log(1)
       page ++
       params={
@@ -58,10 +61,22 @@ class GoodsList extends Component {
       }
       this.setState({
         list:[...this.state.list,...result.list]
+      },()=>{
+        this.bScroll.refresh()
       })
-      bScroll.refresh()
-      bScroll.finishPullUp()
+      this.bScroll.finishPullUp()
     })
+    this.bScroll.on("scroll",_.throttle(()=>{
+      if(this.bScroll.y < -600){
+        this.setState({
+          showGoTop:true
+        })
+      }else{
+        this.setState({
+          showGoTop:false
+        })
+      }
+    }),1000)
   }
   toSearch=()=>{
     this.props.history.push({
@@ -69,8 +84,13 @@ class GoodsList extends Component {
       state:"sele"
     })
   }
+  goTop = ()=>{
+    this.bScroll.scrollTo(0 , 0 ,500)
+  }
   render() {
     return (
+      <>
+      <GoTop showGoTop={this.state.showGoTop} goTop={this.goTop}></GoTop>
       <ListWrap className="scroll-wrap">
         <div>
         <CommonHeader>商品列表</CommonHeader>
@@ -102,6 +122,7 @@ class GoodsList extends Component {
         }
         </div>
       </ListWrap>
+      </>
     );
   }
 }

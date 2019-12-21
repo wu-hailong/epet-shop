@@ -4,7 +4,8 @@ import { Provider } from "react-redux"
 import { BrowserRouter as Router , Switch ,Route ,Redirect} from "react-router-dom"
 import Layout from "pages/home/Layout"
 import Search from "pages/search/Search"
-import GoodsList from './pages/goodslist/GoodsList'
+import GoodsList from 'pages/goodslist/GoodsList'
+import ArticleList from 'pages/search/ArticleList'
 function App() {
   return (
     <Provider store={store}>
@@ -13,6 +14,10 @@ function App() {
           <Route
             path="/home"
             component={Layout}
+          />
+          <Route
+          path="/articlelist"
+          component={ArticleList}
           />
           <Route
             path="/search"
