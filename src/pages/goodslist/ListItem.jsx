@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
 import { ListItemWrap } from "./listStyled"
-
+import { withRouter } from "react-router-dom"
 import cartIco from "assets/images/cart-ico.png"
 
+@withRouter
 class ListItem extends Component {
+  goToDetail = (gid)=>()=>{
+    console.log(gid)
+    this.props.history.push({
+      pathname:"/goodsdetail",
+      state:{
+        gid
+      }
+    })
+  }
+  addToCart = (gid)=>(e)=>{
+    e.stopPropagation()
+    console.log("加入购物车")
+  }
   render() {
     return (
       <ListItemWrap
         borderWidth="0 0 1px 0"
         borderColor="#e7e7e7"
+        onClick={this.goToDetail(this.props.gid)}
        >
         <div>
           <img src={this.props.photo} alt=""/>
@@ -34,7 +49,7 @@ class ListItem extends Component {
           </div>
           <div className="price">¥<span>{this.props.sale_price}</span> <span>{this.props.dprice}</span></div>
           <div className="comments"><span>{this.props.comments}</span> <span>{this.props.sold}</span></div>
-          <div className="cart"><img src={cartIco} alt=""/></div>
+          <div className="cart"><img src={cartIco} alt="" onClick={this.addToCart(this.props.gid)}/></div>
         </div>
       </ListItemWrap>
     )

@@ -6,6 +6,8 @@ import Layout from "pages/home/Layout"
 import Search from "pages/search/Search"
 import GoodsList from 'pages/goodslist/GoodsList'
 import ArticleList from 'pages/search/ArticleList'
+import GoodsDetail from 'pages/detail/GoodsDetail'
+import BookDetail from 'pages/detail/BookDetail'
 function App() {
   return (
     <Provider store={store}>
@@ -26,6 +28,14 @@ function App() {
           <Route
             path="/goodslist"
             component={GoodsList}
+          />
+          <Route
+            path="/goodsdetail"
+            component={GoodsDetail}
+          />
+          <Route
+            path="/bookdetail"
+            component={BookDetail}
           />
           <Redirect
             from="/"

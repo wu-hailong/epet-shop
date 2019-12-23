@@ -2,6 +2,8 @@ import styled from "styled-components"
 
 import border from "components/styled/border"
 
+import navIco from "assets/images/brands-ico.png"
+
 export const ListWrap = styled.div`
   height:100%;
   overflow-y:scroll;
@@ -128,6 +130,74 @@ export const NavBarWrap  = border(
     flex:1;
     text-align:center;
     line-height:40px;
+    position:relative;
+    .am-icon-down{
+      width:10px;
+      height:10px;
+    }
+    &.active{
+      color:#41C856;
+    }
+  }
+  li:nth-child(3){
+
+    span{
+    display:inline-block;
+    position: absolute;
+    background: url(${navIco}) no-repeat -164px -54px;
+    height: 20px;
+    width:20px;
+    top:11px;
+    transform: scale(0.5);
+    }
+    &.active{
+     span{
+      background-position:-113px -54px;
+     }
+    }
+    &.down{
+      span{
+      background-position:-138px -54px;
+      }
+    }
+  }
+  li:nth-child(4){
+
+    span{
+      display: inline-block;
+      background: url(${navIco}) no-repeat -44px -14px;
+      width: 15px;
+      height: 17px;
+      position: absolute;
+      top: 12px;
+    }
   }
 `
 )
+
+export const SortListWrap = styled.div`
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(0,0,0,.5);
+      z-index: 1000;
+      >div{
+        padding:10px;
+        position: relative;
+        background:#f5f5f5;
+        &.active{
+            background: #fff;
+
+        }
+        &.active::after{
+            content:"";
+            width: 30px;
+            height: 30px;
+            display: block;
+            background: url(${navIco}) no-repeat -24px -671px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+      }
+`

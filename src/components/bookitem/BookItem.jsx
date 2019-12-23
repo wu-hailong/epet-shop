@@ -1,11 +1,23 @@
-import React from "react"
+import React,{useCallback} from "react"
 import starIco from "assets/images/star.png"
 import { BookItemWrap } from "../styled/commonStyled"
+import { withRouter } from "react-router-dom"
 
-export default props=>{
+const BookItem = props=>{
+ let goToDetail =useCallback(
+    (id) =>() =>{
+      console.log(id)
+      props.history.push({
+        pathname:"/bookdetail",
+        state:{
+          id
+        }
+      })
+  },[props]
+ )
   return (
     <BookItemWrap >
-      <div className="list-item">
+      <div className="list-item" onClick={goToDetail(props.data.id)}>
         <div  className="item-content">
           <div>
             <img src={props.data.cover.img_url} alt=""/>
@@ -29,3 +41,4 @@ export default props=>{
     </BookItemWrap>
   )
 }
+export default withRouter(BookItem)
