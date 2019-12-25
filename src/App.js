@@ -4,7 +4,7 @@ import { Provider } from "react-redux"
 import { BrowserRouter as Router , Switch ,Route ,Redirect} from "react-router-dom"
 import Layout from "pages/home/Layout"
 import Search from "pages/search/Search"
-import GoodsList from 'pages/goodslist/GoodsList'
+import GoodsList from 'pages/goodslist/components/GoodsList'
 import ArticleList from 'pages/search/ArticleList'
 import GoodsDetail from 'pages/detail/GoodsDetail'
 import BookDetail from 'pages/detail/BookDetail'

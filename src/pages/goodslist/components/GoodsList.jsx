@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import CommonHeader from "components/header/CommonHeader"
 import NavBar from "./NavBar"
 import ListItem from "./ListItem"
@@ -11,7 +11,7 @@ import GoTop from "components/gotop/GoTop"
 import { ActivityIndicator } from "antd-mobile"
 import BScroll from "better-scroll"
 import _ from "lodash"
-import { GETSORTDATA } from './action-types';
+import { GETSORTDATA } from '../action-types';
 import { connect } from "react-redux"
 const mapState = state=> {
   return {
@@ -111,6 +111,7 @@ class GoodsList extends Component {
   }
 
   render() {
+    // console.log(this.props)
     let data
     let list
     if(this.state.firstLoad){

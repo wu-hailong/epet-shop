@@ -8,7 +8,7 @@ export const LayoutWrap = styled.div `
   .am-tab-bar-bar{
     /* z-index:2000; */
     box-shadow: 1px 2px 25px 0px rgba(0,0,0,0.1);
-    height:.52rem;
+    height:52px;
   }
   .am-tabs-pane-wrap{
     overflow:hidden;

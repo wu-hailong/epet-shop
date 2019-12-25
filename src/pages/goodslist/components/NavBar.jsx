@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Icon } from 'antd-mobile';
 import { NavBarWrap ,SortListWrap } from "./listStyled"
 import { connect } from "react-redux"
-import { GETSORTDATA } from "./action-types"
+import { GETSORTDATA } from "../action-types"
 const mapDispatch = dispatch=>{
   return {
     loadData({url,params}){
@@ -14,7 +14,6 @@ const mapDispatch = dispatch=>{
     }
   }
 }
-
 @connect(null,mapDispatch)
 class NavBar extends Component {
   state={
