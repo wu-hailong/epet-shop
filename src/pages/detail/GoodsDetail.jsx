@@ -27,7 +27,8 @@ const GoodsDetail= props=>{
         }
       })
       let detailResult = await get({
-        url:"/v8/goods/detail/main.html",
+        url:"/v3/goods/detail/main.html",//nginx 代理路径
+        // url:"/v8/goods/detail/main.html",//proxy代理路径
         params:{
           do: 'GetDynamic',
           gid

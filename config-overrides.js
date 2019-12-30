@@ -1,4 +1,4 @@
-const { override, fixBabelImports ,addWebpackAlias ,addDecoratorsLegacy} = require('customize-cra');
+const { override, fixBabelImports ,addWebpackAlias ,addDecoratorsLegacy , setWebpackPublicPath} = require('customize-cra');
 
 const path  = require("path")
 
@@ -14,5 +14,6 @@ const path  = require("path")
       store:path.resolve(__dirname,"./src/store"),
       utils:path.resolve(__dirname,"./src/utils")
     }),
-    addDecoratorsLegacy()
+    addDecoratorsLegacy(),//支持修饰符
+    // setWebpackPublicPath("/epet/")//出口文件路径
    );

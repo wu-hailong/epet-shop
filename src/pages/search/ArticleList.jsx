@@ -24,7 +24,8 @@ const ArticleList = props=> {
   useEffect(()=>{
     async function loadData(){
       let result = await post({
-        url:"/v8/content/opgc/Index.html?do=Search",
+        url:"/v3/content/opgc/Index.html?do=Search",//nginx 代理路径
+        // url:"/v8/content/opgc/Index.html?do=Search",//proxy 代理路径
         data:stringify({
            word
         })

@@ -78,6 +78,7 @@ export const ListItemWrap = border(
     }
     .price{
       color: #FF5757;
+      font-size:14px;
       span:last-child{
         font-size: 12px;
         color: #999;
